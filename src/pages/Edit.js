@@ -15,13 +15,13 @@ const Edit = () => {
                 console.log("Persons :" + setEmployees); 
             });
     }, []);
-
-    
+  
     const handleUpdate = () => {
+        debugger;
         axios.post(`https://localhost:7205/api/User/${id}`, employees,)
                 .then(response => {
-                    console.log("User updated successfully:", response.data);
-                   // Refresh user list after update
+                    debugger;
+                    console.log("User updated successfully:", response.data);            
                })
                .catch(error => {
                    console.error("Error updating user:", error);
@@ -29,11 +29,10 @@ const Edit = () => {
         
     };
 
-
     return (
 
         <div className='myclass'>
-            <h1  > Edit Employee Details</h1>
+            <h1  > Edit User Details</h1>
             <table>
                
                 <tbody>
@@ -41,21 +40,33 @@ const Edit = () => {
                     {employees.map(emp => (
                         <tr key={emp.id}>
                             <label className='label' >ID:</label>
-                            <input type="text" name="id" value={id} disabled />
+                            <input type="text" name="id" value={id} disabled style={{
+                        width: '200px',
+                        borderRadius:'3px'
+                    } }   />
                             
                             <br />
                             <label className='label'>Name:</label>
-                            <input type="text" name="name" value={emp.name}  />
+                            <input type="text" name="name" value={emp.name}  style={{
+                        width: '200px',
+                        borderRadius:'3px'
+                    } }  />
                             <br />
                             <label className='label'>Lastname:</label>
-                            <input type="text" name="lastname" value={emp.lastname}   />
+                            <input type="text" name="lastname" value={emp.lastname} style={{
+                        width: '200px',
+                        borderRadius:'3px'
+                    } }    />
                             <br />
                             <label className='label'>Department:</label>
-                            <input type="text" name="departement" value={emp.departement}  />
+                            <input type="text" name="departement" value={emp.departement}  style={{
+                        width: '200px',
+                        borderRadius:'3px'
+                    } }  />
                             <br />
                             <br />
                             <div className='btn'>
-                                <button onClick={handleUpdate}>Update</button>
+                                <button className='btnn' onClick={handleUpdate}>Update</button>
                             </div>
                         </tr>
                          

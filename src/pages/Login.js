@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import axios from "axios";
 import "../App";
-import User from "./User";
-
+import { Link} from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaUserCircle } from "react-icons/fa";
 
 const Login = () => {
     const [Data, setData] = useState({
@@ -12,9 +14,10 @@ const Login = () => {
         departement:"",
        
     });
- 
-const handleChange = (e) => {
-    const value = e.target.value;
+    
+    const [errorMessage, setErrorMessage] = useState("");
+    const handleChange = (e) => {
+        const value = e.target.value;
         setData({
             ...Data,
             [e.target.name]: value
@@ -29,42 +32,66 @@ const handleChange = (e) => {
             Lastname: Data.lastname,
             Departement: Data.departement
         };
-        /*console.log("departement" + userData.Department + "" + userData.Name + userData.Lastname + userData.Id);*/
+        debugger;
         axios.post("https://localhost:7205/api/User", userData,).then((response) => {
-            console.log(response.status, response.Data.token);  
-            
+            toast.info("your account has been created successfully",{
+                position:"top-center",
+                autoClose:2000
+            });
+           
+            //navigate("/");
+            console.log(response.status, response.Data.token);
+           
+            debugger;
+
+           
         })
         .catch ((error) => {
             if (error.response) {
-                console.error("Response data:", error.response.data);
-            } else if(error.request) {
                 
+                console.error("Response data:", error.response.data);
+                
+            } else if(error.request) { 
                 console.error("No response received:", error.request);
+               
             }
-    
         });
+
+        setTimeout(() => {
+            setErrorMessage("");
+        }, 5000);
         
    };
-
+ 
     return (
       
         <div className='dd'>
-            <h1 className='login' >Employee Details</h1>
-
+            <ul>
+              <li className="nav-item">
+                        <button><Link to="/" className="nav-link"><FaUserCircle color="skyblue"/></Link>LogIn</button>
+                    </li>
+                
+                </ul>
+                <ToastContainer/>
+            <h1 className='login' >SignUp</h1>        
+            {/* <button className="signup-button">
+                <a href="/" className="signup-link">LogIn</a>
+            </button> */}
             <div className='frm'>
+            {errorMessage && <h2 className="mes">{errorMessage}</h2>}
             <form onSubmit={handleSubmit}>
-                   
                     <label className='label' htmlFor="text">
                         ID:  </label>
                     <input
                         type="text"
                         name="id"
                         value={Data.id}
-                        onChange={handleChange}
+                        onChange={handleChange} required
                         style={{
                             width: '200px',
                             borderRadius: '3px'
                         }}
+                        maxlength="10"
                     />
                     <br />
                     <br />
@@ -74,7 +101,8 @@ const handleChange = (e) => {
                         type="text"
                         name="name"
                         value={Data.name}
-                        onChange={handleChange}
+                        onChange={handleChange} required
+                        maxlength="50"
                         style={{
                             width: '200px',
                             borderRadius:'3px'
@@ -88,7 +116,8 @@ const handleChange = (e) => {
                         type="text"
                         name="lastname"
                         value={Data.lastname}
-                        onChange={handleChange}
+                        onChange={handleChange} required
+                        maxlength="50"
                         style={{
                             width: '200px',
                             borderRadius: '3px'
@@ -103,7 +132,8 @@ const handleChange = (e) => {
                         type="text"
                         name="departement"
                         value={Data.departement}
-                        onChange={handleChange}
+                        onChange={handleChange} required
+                        maxlength="50"
                         style={{
                             width: '200px',
                             borderRadius: '3px'
@@ -112,13 +142,14 @@ const handleChange = (e) => {
               
                 <br/>
                     <div className='btn'>
-                        <button  type="submit">Submit</button>
+                        <button className='btnn' type="submit">Submit</button>
                 </div>
                 </form>
                 
             </div>
-           <button><a href="/User">UsersList</a></button>
+            <ToastContainer/>
             </div>
+            
     );
 };
 export default Login;

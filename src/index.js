@@ -7,15 +7,10 @@ import Edit from './pages/Edit';
 import reportWebVitals from './reportWebVitals';
 import {
     createBrowserRouter,
-    RouterProvider,
-    Route,
-    Link,
-    
+    RouterProvider,  
 } from "react-router-dom";
 import User from './pages/User';
 import SignUp from './pages/Sign';
-
-
 
 const router = createBrowserRouter([
     {
@@ -25,16 +20,19 @@ const router = createBrowserRouter([
     },
     {
         path: "Login",
-        element: <Login/>,
+        element: <Login/>
+        ,
     },
     {
         path: "User",
-        element: <User />,
+        element: <User />
+        ,
         
     },
     {
         path: "Edit/:id",
-        element:<Edit/>,
+        element:<Edit/>
+        ,
     },
 ]);
 

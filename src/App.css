@@ -23,6 +23,10 @@
 .login{
     text-align:center;
 }
+.log{
+  text-align: center;
+  color: #ffffff;
+}
 .frm{
     text-align:center;
 }
@@ -41,12 +45,12 @@
 }
 
 .signup-button {
-    background-color: #007bff; /* Button background color */
+    background-color: mediumvioletred; /* Button background color */
     color: #ffffff; /* Button text color */
     border: none; /* Remove button border */
     padding: 10px 20px; /* Button padding */
     font-size: 16px; /* Button text size */
-    border-radius: 5px; /* Button border radius */
+    border-radius: 8px; /* Button border radius */
     cursor: pointer; /* Show pointer cursor on hover */
     margin-left: 1100px;
     margin-top: 1px;
@@ -65,10 +69,25 @@
         text-decoration: underline; /* Underline link text on hover */
     }
 
+.btnn {
+    background-color:mediumvioletred;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 8px; 
+}
+.btnn:hover{
+    background-color:palevioletred;
+}
 
-
-
-
+.mes {
+    color: #b32f3c;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
 
 
 
