@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+}
+.body{
+    background-color:black;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.myclass{
+    margin-left:350px;
+    margin-top:50px;
+}
+.th-spacing {
+    margin-right: 60px;
+}
+.btn{
+  
+    margin-top:70px;
+    margin-left:150px;
+}
+.login{
+    text-align:center;
+}
+.frm{
+    text-align:center;
+}
+.label {
+    display: inline-block;
+    width: 100px; /* Set the width of the labels */
+    text-align: right; /* Align label text to the right */
+    margin-right: 10px;
+   
+}
+.dd{
+    height:100%;
+    width:100%;
+    
+    
+}
+
+.signup-button {
+    background-color: #007bff; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 16px; /* Button text size */
+    border-radius: 5px; /* Button border radius */
+    cursor: pointer; /* Show pointer cursor on hover */
+    margin-left: 1100px;
+    margin-top: 1px;
+}
+
+    .signup-button:hover {
+        background-color: palevioletred; /* Button background color on hover */
+    }
+
+.signup-link {
+    color: inherit; /* Inherit text color from button */
+    text-decoration: none; /* Remove default underline */
+}
+
+    .signup-link:hover {
+        text-decoration: underline; /* Underline link text on hover */
+    }
+
+
+
+
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
