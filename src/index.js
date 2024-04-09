@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Login from './pages/Login';
 import Edit from './pages/Edit';
+import Table from './pages/table';
 import reportWebVitals from './reportWebVitals';
 import {
     createBrowserRouter,
@@ -34,6 +35,17 @@ const router = createBrowserRouter([
         element:<Edit/>
         ,
     },
+    {
+        path:"table",
+        element:<Table/>
+        ,
+    },
+    {
+        path:"App",
+        element:<App/>
+        ,
+    }
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

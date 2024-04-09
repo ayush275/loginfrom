@@ -11,6 +11,7 @@ function User() {
 
  const [employees, setEmployees] = useState([]);
  const [errorMessage, setErrorMessage] = useState("");
+ 
     useEffect(() => {
         axios.get(`https://localhost:7205/api/User`)
             .then(res => {
@@ -25,7 +26,6 @@ function User() {
             });
     }, []);
 
-   
     const handleDelete = (id) => {
         // Make a DELETE request to the API endpoint
         axios.delete(`https://localhost:7205/api/User/${id}`)

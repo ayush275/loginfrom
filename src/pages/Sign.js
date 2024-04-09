@@ -5,14 +5,13 @@ import NAV from '../nav';
 import { useNavigate } from "react-router-dom";
 
 
-
 const SignUp = () => {
     const [formData, setFormData] = useState({
         name: '',
         Password: ''
     });
-
     const navigate = useNavigate();
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -28,12 +27,10 @@ const SignUp = () => {
             Password: formData.password
             
         };
-        
         debugger;
         axios.post("https://localhost:7205/api/User/Login", userData).then((response) => {
              navigate("/User");
-            console.log(response.status, response.Data.token);
-           
+            console.log(response.status, response.Data.token); 
             debugger;  
         })
         .catch ((error) => {
@@ -47,7 +44,6 @@ const SignUp = () => {
         });
     };
 
-
     return (
         <div className='dd'>
             <NAV/>
@@ -55,9 +51,7 @@ const SignUp = () => {
             {/* <button className="signup-button">
                 <a href="/Login" className="signup-link">SignUp</a>
             </button> */}
-            
             <div className='frm'>
-             
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label className='label'>Username</label>
@@ -75,12 +69,10 @@ const SignUp = () => {
                         borderRadius:'3px'
                        }} />
                        <br />
-                     
                     </div>
                     <div className='btn'>
                         <button className='btnn' type="submit">Login</button>
                     </div>
-                   
                 </form>
             </div>
         </div>

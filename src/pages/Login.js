@@ -12,10 +12,9 @@ const Login = () => {
         Name:"",
         lastname:"",
         departement:"",
-       
     });
-    
     const [errorMessage, setErrorMessage] = useState("");
+    
     const handleChange = (e) => {
         const value = e.target.value;
         setData({
@@ -37,11 +36,9 @@ const Login = () => {
             toast.info("your account has been created successfully",{
                 position:"top-center",
                 autoClose:2000
-            });
-           
+            });       
             //navigate("/");
             console.log(response.status, response.Data.token);
-           
             debugger;
 
            
@@ -147,7 +144,7 @@ const Login = () => {
                 </form>
                 
             </div>
-            <ToastContainer/>
+
             </div>
             
     );
