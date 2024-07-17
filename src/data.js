@@ -7,14 +7,14 @@ export const NAVLINKS = [
         icon:<FaHome/>,
     },
     {
-        name: 'Revenue',
-        path: '/',
+        name: 'Users',
+        path: '/User',
       
     },
     {
         name: 'Notifications',
         path: '/',
-       
+      
 
     },
     {

@@ -14,7 +14,7 @@ function App(props) {
     return (
         <aside className={`sidebar ${isHover ? "active" : ""}`}>
         <div className="open-btn" onClick={() => setIsHover((prev) => !prev)}>
-          <span className="material-symbols-outlined">Clickhere</span>
+          <span className="material-symbols-outlined">Select Project</span>
         </div>
         <div className="wrapper">
           <div className="top__wrapper">

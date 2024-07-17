@@ -1,0 +1,15 @@
+.dashboard-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Distribute items evenly */
+    margin: 5%;
+  }
+  
+  .dashboard-item {
+    flex: 1; /* Each item takes equal space */
+    background-color: #f0bcbc; /* Example background color */
+    padding: 20px;
+    border: 1px solid #151010;
+    border-radius:1em ;
+    margin-right: 5%;
+  }
+  

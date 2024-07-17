@@ -20,23 +20,17 @@ const Edit = () => {
         debugger;
         axios.post(`https://localhost:7205/api/User/${id}`, employees,)
                 .then(response => {
-                    debugger;
                     console.log("User updated successfully:", response.data);            
                })
                .catch(error => {
                    console.error("Error updating user:", error);
                });
-        
     };
-
     return (
-
         <div className='myclass'>
             <h1  > Edit User Details</h1>
-            <table>
-               
+            <table>           
                 <tbody>
-                
                     {employees.map(emp => (
                         <tr key={emp.id}>
                             <label className='label' >ID:</label>
@@ -68,17 +62,10 @@ const Edit = () => {
                             <div className='btn'>
                                 <button className='btnn' onClick={handleUpdate}>Update</button>
                             </div>
-                        </tr>
-                         
-
-                    ))}
-
-                 
-                                  
+                        </tr>  
+                    ))}                       
                 </tbody>
             </table>
-            
-
             <div>
             </div>
         </div>

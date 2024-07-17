@@ -12,6 +12,9 @@ import {
 } from "react-router-dom";
 import User from './pages/User';
 import SignUp from './pages/Sign';
+import Home from './pages/Home';
+import Logout from './pages/Logout';
+import Dashboard from './pages/dashboard';
 
 const router = createBrowserRouter([
     {
@@ -44,7 +47,29 @@ const router = createBrowserRouter([
         path:"App",
         element:<App/>
         ,
+    },
+    {
+        path:"Home",
+        element:<Home/>
+        ,
+    },
+    {
+        path:"addUser",
+        element:<addUser/>
+        ,
+
+    },
+    {
+        path:"Logout",
+        element:<Logout/>    
+    
+    },
+    { 
+        path:"dashboard",
+        element:<Dashboard/>
+
     }
+
 
 ]);
 
